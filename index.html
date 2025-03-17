@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>VJ Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(90deg, #2C3930, black);
+            background-size: 300% 300%;
+            animation: gradient-animation 5s linear infinite;
+
+            @keyframes gradient-animation {
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                50% {
+                    background-position: 100% 50%;
+                }
+
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            font-family: "Playfair Display",
+            serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+        }
+
+        .nav {
+            background-color: #111e15;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+
+        .navbar ul {
+            display: flex;
+            max-width: 90%;
+            margin: auto;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar li {
+            list-style-type: none;
+
+        }
+
+        .navbar a {
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .navbar-logo {
+            flex: 1;
+            user-select: none;
+        }
+
+        .navbar-logo img {
+            width: 90px;
+        }
+
+        .navbar-toggle {
+            display: none;
+        }
+
+        .navbar-links:hover a {
+            color: #eacd9f;
+            text-decoration: underline;
+        }
+
+        .firstsection {
+            padding-top: 75px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            max-width: 90%;
+            margin: auto;
+            padding-bottom: 75px;
+        }
+
+        .leftsection {
+            width: 40%;
+            margin-left: 0;
+            font-size: 3rem;
+            padding-top: 50px;
+        }
+
+        #element {
+            font-size: 2.5rem;
+        }
+
+        .rightsection {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            width: 40%;
+            margin: 0;
+        }
+
+        .rightsection img {
+            border-style: solid;
+            border-color: #eacd9f;
+            border-radius: 10px;
+            width: 325px;
+            height: 240px;
+            cursor: pointer;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+
+        .rightsection .secondimg {
+            margin-left: 20px;
+        }
+
+        .rightsection img:hover {
+            transform: scale(1.1);
+            /* Zoom in */
+            box-shadow: 0 0 15px #eacd9f;
+            /* Blue glow */
+        }
+
+        .gold {
+            color: #eacd9f;
+        }
+
+        .btn1 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            color: #3f5245;
+            font-weight: 600;
+            border-radius: 15px;
+            background-color: #eacd9f;
+            padding: 15px;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+
+        .firstsection button a {
+            color: #2C3930;
+            text-decoration: none;
+        }
+
+        .btn1:hover {
+            transform: scale(1.1);
+            /* Zoom in */
+            box-shadow: 0 0 15px #eacd9f;
+            /* Blue glow */
+        }
+
+        .secondsection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 90%;
+            margin: auto;
+            border-radius: 2%;
+            background-color: #eacd9f;
+            color: black;
+            padding-bottom: 50px;
+        }
+
+        .title {
+            padding-top: 30px;
+            font-size: 4.5rem;
+        }
+
+        .green {
+            color: #3f5245;
+        }
+
+        .choosetitle {
+            padding-left: 50px;
+            font-weight: 600;
+            padding-top: 2.5%;
+            font-size: 30px;
+        }
+
+        .choosedesc {
+            padding: 0 50px 0 50px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+        }
+
+        .thirdsection {
+            background-size: cover;
+            max-width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            margin: auto;
+        }
+
+        .thirdsection>div {
+            width: 50%;
+        }
+
+        .thirdsection::before {
+            content: "";
+            position: absolute;
+            top: 1810px;
+            left: 0;
+            width: 100%;
+            background-image: url(images/section3bg.jpg);
+            mix-blend-mode: screen;
+            opacity: 0.2;
+        }
+
+        .third-title {
+            font-size: 4rem;
+        }
+
+        .third-title-desc {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        .third-right-section img {
+            height: 500px;
+            width: 500px;
+            padding-left: 100px;
+        }
+
+        .foot {
+            background-color: rgb(1, 18, 1);
+            width: 100%;
+            margin: auto;
+            height: 70px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .foot ul li {
+            list-style-type: none;
+            display: inline-block;
+            padding-left: 40px;
+        }
+
+        .foot ul li a img {
+            text-decoration: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+        }
+
+        .copyright {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @media (max-width : 900px) {
+            .navbar ul {
+                width: 100%;
+            }
+
+            .navbar a {
+                font-size: 15px;
+                text-decoration: none;
+                color: white;
+                padding: 1rem;
+            }
+
+
+            .firstsection {
+                padding-top: 75px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                max-width: 80%;
+                margin: auto;
+                padding-bottom: 75px;
+            }
+
+            .rightsection img {
+                border-style: solid;
+                border-color: #eacd9f;
+                border-radius: 10px;
+                width: 150px;
+                height: 120px;
+                cursor: pointer;
+                transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            }
+
+            .leftsection {
+                width: 45%;
+                font-size: 2rem;
+                padding-top: 50px;
+            }
+
+            .firstsection {
+                padding-top: 50px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                max-width: 80%;
+                margin: auto;
+                padding-bottom: 50px;
+            }
+
+            #element {
+                font-size: 1.5rem;
+            }
+
+            .btn1 {
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 12px;
+                color: #3f5245;
+                font-weight: 600;
+                border-radius: 10px;
+                background-color: #eacd9f;
+                padding: 5px;
+                margin-top: 10px;
+                cursor: pointer;
+                transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            }
+
+            .title {
+                padding-top: 20px;
+                font-size: 2.5rem;
+            }
+
+            .secondsection {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                max-width: 90%;
+                margin: auto;
+                border-radius: 2%;
+                background-color: #eacd9f;
+                color: black;
+                padding-bottom: 25px;
+            }
+
+            .choosetitle {
+                padding-left: 50px;
+                font-weight: 600;
+                padding-top: 2.5%;
+                font-size: 23px;
+            }
+
+            .choosedesc {
+                padding: 0 50px 0 50px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 15px;
+            }
+
+            .thirdsection {
+                background-size: cover;
+                max-width: 80%;
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 30px;
+                margin: auto;
+            }
+
+            .third-title {
+                font-size: 2.5rem;
+            }
+
+            .third-title-desc {
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 15px;
+                margin-top: 10px;
+            }
+
+            .third-right-section img {
+                height: 360px;
+                width: 360px;
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width : 770px) {
+            .navbar ul {
+                flex-wrap: wrap;
+            }
+
+            .navbar-toggle {
+                display: block;
+            }
+
+            .navbar-links {
+                display: none;
+                width: 100%;
+                text-align: center;
+                padding-bottom: 15px;
+            }
+
+            .navbar-logo img {
+                width: 60px;
+                padding-top: 10px;
+            }
+
+            .active {
+                display: block;
+            }
+
+            .firstsection {
+                max-width: 90%;
+                margin: auto;
+                padding-top: 25px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .firstsection>div {
+                width: 90%;
+            }
+
+            .leftsection {
+                padding-top: 0;
+                max-width: 100%;
+                margin: auto;
+                display: block;
+                text-align: center;
+                font-size: 2.5rem;
+            }
+
+            #element {
+                font-size: 1.5rem;
+            }
+
+            .btn1 {
+                text-align: center;
+                font-size: 15px;
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+
+            .rightsection {
+                max-width: 80%;
+                margin: auto;
+                margin-top: 50px;
+            }
+
+            .rightsection img {
+                width: 100%;
+                height: 200px;
+            }
+
+            .title {
+                padding-top: 20px;
+                font-size: 1.9rem;
+                text-align: center;
+            }
+
+            .choosetitle {
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                padding-left: 20px;
+                font-weight: 600;
+                padding-top: 2.5%;
+                font-size: 16px;
+            }
+
+            .choosedesc {
+                padding: 0 20px 0 20px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 14px;
+            }
+
+            .thirdsection {
+                background-size: cover;
+                max-width: 90%;
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column-reverse;
+                margin: auto;
+            }
+
+            .thirdsection>div {
+                width: 90%;
+            }
+
+            .third-title {
+                text-align: left;
+                font-size: 2rem;
+            }
+
+            .third-title-desc {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .thirdsection img {
+                max-width: 100%;
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                width: 290px;
+                height: 290px;
+                padding-left: 0;
+                padding-bottom: 25px;
+            }
+
+            .foot {
+                flex-direction: column;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .icons {
+                padding-top: 15px;
+            }
+
+            .foot ul li a img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width : 426px) {
+
+            .rightsection {
+                max-width: 85%;
+                margin: auto;
+                margin-top: 40px;
+                grid-gap: 5px;
+            }
+
+            .rightsection img {
+                width: 100%;
+                height: 160px;
+            }
+
+            .rightsection .first {
+                display: none;
+            }
+
+            .rightsection .third {
+                display: none;
+            }
+
+            .rightsection .second {
+                margin-top: 30px;
+            }
+
+            .title {
+                padding-top: 20px;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .choosetitle {
+                font-size: 14px;
+            }
+
+            .choosedesc {
+                padding: 0 20px 0 20px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 12px;
+            }
+
+            .third-title {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+
+            .copyright {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width : 376px) {
+            .copyright {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="nav">
+            <nav class="navbar">
+                <ul>
+                    <li class="navbar-logo"><img src="images/logo.png" alt=""></li>
+                    <li class="navbar-toggle"><i class="fa fa-bars"></i></li>
+                    <li class="navbar-links"><a href="index.html">Home</a></li>
+                    <li class="navbar-links"><a href="aboutus.html">About Us</a></li>
+                    <li class="navbar-links"><a href="OurServices.html">Our Services</a></li>
+                    <li class="navbar-links"><a href="EventThemes.html">Event Themes</a></li>
+                    <li class="navbar-links"><a href="Contactus.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="firstsection">
+            <div class="leftsection">
+                <div>Welcome to</div>
+                <div class="gold">VJ Events</div>
+                <div>Here you get</div>
+                <div><span id="element"></span></div>
+                <button class="btn1"><a href="Contactus.html">Contact Now</a></button>
+            </div>
+            <div class="rightsection">
+                <img class="firstimg first" src="images/image1.jpg" alt="">
+                <img class="firstimg second" src="images/image2.webp" alt="">
+                <img class="secondimg third" src="images/image3.webp" alt="">
+                <img class="secondimg fourth" src="images/image 4.webp" alt="">
+            </div>
+        </section>
+
+        <section class="secondsection">
+            <div class="title"><strong>Why choose <span class="green">VJ Events</span> ?</strong></div>
+            <div>
+                <div class="choosetitle">Personalized Service:</div>
+                <div class="choosedesc">No two events are the same, and neither should their planning be. VJ Events
+                    takes the time to understand your vision, preferences, and specific needs. Our team works closely
+                    with you to craft a customized event that reflects your personality and style. From intimate
+                    gatherings to grand celebrations, we tailor every aspect to ensure it’s uniquely yours.
+                </div>
+            </div>
+
+            <div>
+                <div class="choosetitle">Attention to Detail:</div>
+                <div class="choosedesc">Success lies in the details, and at VJ Events, we leave no stone unturned. From
+                    venue selection and décor to logistics and entertainment, we meticulously plan and execute every
+                    element of your event. Our keen eye for detail ensures a flawless experience, allowing you to enjoy
+                    your special day without stress.</div>
+            </div>
+
+            <div>
+                <div class="choosetitle">Professionalism and Dedication:</div>
+                <div class="choosedesc">Our team is passionate about bringing your dream event to life. We work closely
+                    with trusted vendors, manage timelines efficiently, and handle every element with precision. Our
+                    dedication ensures that your event runs smoothly, allowing you to enjoy the celebration stress-free.
+                </div>
+            </div>
+
+            <div>
+                <div class="choosetitle">Stress-Free Planning:</div>
+                <div class="choosedesc">Our team is passionate about bringing your dream event to life. We work closely
+                    with trusted vendors, manage timelines efficiently, and handle every element with precision. Our
+                    dedication ensures that your event runs smoothly, allowing you to enjoy the celebration stress-free.
+                </div>
+            </div>
+        </section>
+
+
+        <section class="thirdsection">
+            <div class="third-left-section">
+                <div class="third-title">Begin Your <span style="color: #f8e7bf;">Event </span><br>Journey Today!</div>
+                <div class="third-title-desc">Ready to turn your dream event into reality? Contact VJ Events to schedule
+                    a personalized consultation with our expert planners. Whether it’s a wedding, corporate function, or
+                    special celebration, we handle every detail to ensure a seamless and stress-free experience. Let us
+                    bring your vision to life while you focus on making unforgettable memories. Your perfect event
+                    starts with VJ Events—reach out to us today!</div>
+            </div>
+            <div class="third-right-section">
+                <img src="images/section3rightsectionimg.png" alt="">
+            </div>
+            </div>
+        </section>
+
+        <footer class="foot">
+            <div class="copyright">Copyright 2025 VJ Events &copy;. All rights reserved.</div>
+            <ul class="icons">
+                <li><a href="https://www.instagram.com/v_j.events?igsh=MWIzNWZkaWR2cG51Zg=="><img src="images/instagram white.png" alt=""></a></li>
+                <li><a href=""><img src="images/whatsapp-white-icon.png" alt=""></a></li>
+                <li><a href="Contactus.html"><img src="images/gmail white.png" alt=""></a></li>
+                <li><a href="Contactus.html"><img src="images/location white.png" alt=""></a></li>
+            </ul>
+        </footer>
+
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script>
+
+        const togglebutton = document.getElementsByClassName('navbar-toggle')[0];
+        const navbarLinks = document.getElementsByClassName('navbar-links');
+        togglebutton.addEventListener('click', function () {
+            for (var i = 0; i < navbarLinks.length; i++)
+                navbarLinks[i].classList.toggle('active');
+        });
+
+        var typed = new Typed('#element', {
+            strings: ['Wedding planning', 'Naming Ceremony', 'Wedding anniversery', 'Baby Shower', 'Birthday Parties', 'House Warming', 'Family get-together', 'School and College Fests', 'Political Events', 'Many more events...'],
+            typeSpeed: 75,
+        });
+
+        //tilt animation
+
+        document.addEventListener("mousemove", function (event) {
+            const img = document.querySelector(".third-right-section img");
+            if (!img) return;
+
+            const rect = img.getBoundingClientRect();
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            // Reduce tilt effect further by increasing divisor
+            let rotateX = -(mouseY - rect.y - (rect.height / 2)) / 80;
+            let rotateY = (mouseX - rect.x - (rect.width / 2)) / 80;
+
+            // Limit the tilt range (max 10 degrees in any direction)
+            const maxTilt = 10;
+            rotateX = Math.max(-maxTilt, Math.min(maxTilt, rotateX));
+            rotateY = Math.max(-maxTilt, Math.min(maxTilt, rotateY));
+
+            img.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            img.style.transition = "transform 0.1s linear"; // Smooth animation
+        });
+
+        //zoom in animation...
+        document.querySelectorAll('.rightsection img').forEach(img => {
+            img.addEventListener('mouseover', function () {
+                this.style.transform = 'scale(1.1)';
+                this.style.transition = 'transform 0.3s ease-in-out';
+            });
+
+            img.addEventListener('mouseout', function () {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(90deg, #2C3930, black);
+            background-size: 300% 300%;
+            animation: gradient-animation 5s linear infinite;
+
+            @keyframes gradient-animation {
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                50% {
+                    background-position: 100% 50%;
+                }
+
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            font-family: "Playfair Display",
+            serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+        }
+
+        .nav {
+            background-color: #111e15;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+
+        .navbar ul {
+            display: flex;
+            max-width: 90%;
+            margin: auto;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar li {
+            list-style-type: none;
+
+        }
+
+        .navbar a {
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .navbar-logo {
+            flex: 1;
+            user-select: none;
+        }
+
+        .navbar-logo img {
+            width: 90px;
+        }
+
+        .navbar-toggle {
+            display: none;
+        }
+
+        .navbar-links:hover a {
+            color: #eacd9f;
+            text-decoration: underline;
+        }
+
+        .title {
+            display: inline-block;
+            margin: 0 10% 0 10%;
+            font-size: 6rem;
+            padding-top: 50px;
+            color: #eacd9f;
+        }
+
+        .firstsection {
+            max-width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+
+        .firstsection>div {
+            width: 50%;
+        }
+
+        .title-desc {
+            padding-top: 25px;
+            font-size: 22px;
+        }
+
+        .rightsection {
+            padding-left: 50px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .rightsection img {
+            border: #c29752 solid;
+            height: 300px;
+            width: 250px;
+            border-radius: 5%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .rightsection .img1 {
+            margin-top: 20px;
+        }
+
+        .rightsection .img3 {
+            margin-top: 20px;
+        }
+
+        .rightsection img:hover {
+            transform: scale(1.1);
+        }
+
+        .subheading {
+            padding-top: 25px;
+            font-size: 3.5rem;
+            color: #eacd9f;
+        }
+
+        .subheading-list {
+            padding-top: 25px;
+        }
+
+        .subheading-list li {
+            letter-spacing: 2.5px;
+            font-size: 18px;
+            list-style-position: inside;
+            padding-left: 25px;
+            padding-top: 2px;
+        }
+
+        .secondsection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #eacd9f;
+            border-radius: 2%;
+            color: black;
+            padding-bottom: 50px;
+        }
+
+        .secondsection>div {
+            max-width: 80%;
+            margin: auto;
+        }
+
+        .service h1 {
+            padding-top: 50px;
+            font-size: 3rem;
+        }
+
+        .service p {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            padding-top: 10px;
+            font-size: 20px;
+        }
+
+        .foot {
+            background-color: rgb(1, 18, 1);
+            width: 100%;
+            margin: auto;
+            height: 70px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .foot ul li {
+            list-style-type: none;
+            display: inline-block;
+            padding-left: 40px;
+        }
+
+        .foot ul li a img {
+            text-decoration: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+        }
+
+        .copyright {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @media (max-width : 900px) {
+            .navbar a {
+                font-size: 15px;
+                padding: 1rem;
+            }
+
+            .firstsection {
+                align-items: center;
+            }
+
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .title-desc {
+                padding-top: 20px;
+                font-size: 15px;
+            }
+
+            .rightsection img {
+                height: 250px;
+                width: 180px;
+            }
+
+            .rightsection .img1 {
+                margin-top: 10px;
+            }
+
+            .rightsection .img3 {
+                margin-top: 10px;
+            }
+
+            .subheading {
+                padding-top: 20px;
+                font-size: 2.5rem;
+                color: #eacd9f;
+            }
+
+            .subheading-list {
+                letter-spacing: 0px;
+                padding-top: 20px;
+            }
+
+            .subheading-list li {
+                letter-spacing: 1px;
+                font-size: 13px;
+                list-style-position: inside;
+                padding-left: 15px;
+                padding-top: 2px;
+            }
+
+            .service h1 {
+                padding-top: 50px;
+                font-size: 2rem;
+            }
+
+            .secondsection {
+                border-radius: 1%;
+            }
+
+            .service p {
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                padding-top: 10px;
+                font-size: 15px;
+            }
+
+        }
+
+        @media (max-width : 770px) {
+
+            .navbar ul {
+                flex-wrap: wrap;
+            }
+
+            .navbar-toggle {
+                display: block;
+            }
+
+            .navbar-links {
+                display: none;
+                width: 100%;
+                text-align: center;
+                padding-bottom: 15px;
+            }
+
+            .navbar-logo img {
+                width: 60px;
+                padding-top: 10px;
+            }
+
+            .active {
+                display: block;
+            }
+
+            .title {
+                font-size: 2.5rem;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .firstsection {
+                max-width: 90%;
+                margin: auto;
+                flex-direction: column-reverse;
+            }
+
+            .firstsection>div {
+                width: 90%;
+                margin: auto;
+            }
+
+            .rightsection {
+                padding-left: 0px;
+                width: 100%;
+            }
+
+            .rightsection img {
+                width: 90%;
+                height: 300px;
+            }
+
+            .rightsection .img2 {
+                margin-top: 30px;
+            }
+
+            .rightsection .img3 {
+                margin-top: -30px;
+            }
+
+            .subheading-list {
+                letter-spacing: 0px;
+                padding-top: 20px;
+            }
+
+            .service h1 {
+                padding-top: 20px;
+                font-size: 2rem;
+            }
+
+            .foot{
+                flex-direction: column;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .icons{
+                padding-top: 15px;
+            }
+
+            .foot ul li a img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width : 426px) {
+
+            .title {
+                font-size: 2.5rem;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .firstsection {
+                max-width: 90%;
+                margin: auto;
+                flex-direction: column;
+            }
+
+            .firstsection>div {
+                width: 90%;
+                margin: auto;
+            }
+
+            .rightsection {
+                padding-left: 0px;
+                width: 100%;
+            }
+
+            .rightsection img {
+                width: 100%;
+                height: 200px;
+            }
+
+            .rightsection .img1 {
+                display: none;
+            }
+
+            .rightsection .img2 {
+                display: none;
+            }
+
+            .rightsection .img3 {
+                margin-top: 30px;
+            }
+
+            .subheading-list {
+                letter-spacing: 0px;
+                padding-top: 20px;
+            }
+
+            .service h1 {
+                padding-top: 20px;
+                font-size: 1.5rem;
+            }
+
+            .service p {
+                font-size: 14px;
+            }
+
+            .copyright{
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width : 376px){
+            .copyright{
+                font-size: 12px;
+            }
+        }
+    </style>
+    <title>Services | VJ events</title>
+</head>
+
+<body>
+    <main>
+        <div class="nav">
+            <nav class="navbar">
+                <ul>
+                    <li class="navbar-logo"><img src="images/logo.png" alt=""></li>
+                    <li class="navbar-toggle"><i class="fa fa-bars"></i></li>
+                    <li class="navbar-links"><a href="index.html">Home</a></li>
+                    <li class="navbar-links"><a href="aboutus.html">About Us</a></li>
+                    <li class="navbar-links"><a href="OurServices.html">Our Services</a></li>
+                    <li class="navbar-links"><a href="EventThemes.html">Event Themes</a></li>
+                    <li class="navbar-links"><a href="Contactus.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="title"> Our Services </div>
+        <section class="firstsection">
+            <div class="leftsection">
+                <div class="title-desc">
+                    <p>At VJ Events, we take pride in offering a diverse range of services customized
+                        to fulfill all your event planning needs. From conceptualization to post-event execution, we are
+                        with you at every step. Our team of seasoned professionals brings expertise and creativity to
+                        turn
+                        your vision into reality, ensuring a smooth and unforgettable experience for you and your
+                        guests.</p>
+                </div>
+                <div class="subheading"> You get </div>
+                <ul class="subheading-list">
+                    <li>Banners</li>
+                    <li>Shamiyana / Pendal</li>
+                    <li>Audio & Video Visual</li>
+                    <li>Catering & Pan Wala</li>
+                    <li>Orchestra & Anchors</li>
+                    <li>Photography & Videography</li>
+                    <li>Dhol</li>
+                    <li>Bouncer</li>
+                    <li>Fog Machine</li>
+                    <li>Cold Fire & Paper Blast Matka</li>
+                    <li>Makeup Artist</li>
+                    <li>Mehndi and Haldi</li>
+                    <li>Dance Choreography</li>
+                </ul>
+            </div>
+            <div class="rightsection">
+                <div><img class="img1" src="images/services5.jpg" alt=""></div>
+                <div><img class="img2" src="images/services3.jpg" alt=""></div>
+                <div><img class="img3" src="images/services2.jpg" alt=""></div>
+                <div><img class="img4" src="images/services6.jpg" alt=""></div>
+            </div>
+        </section>
+        <section class="secondsection">
+            <div>
+                <div class="service">
+                    <h1>Wedding</h1>
+                    <p>We offer a complete wedding package, including beautifully crafted mandaps, stage decorations,
+                        and
+                        seating arrangements. Capture every moment with pre-wedding and post-wedding shoots, along with
+                        videography. Enjoy customized catering, makeup, and entertainment, including a DJ and live
+                        music.
+                        Our professional hosts ensure your event runs smoothly, while our bouncers provide security.
+                        From
+                        flowers to the finest details, we bring your dream wedding to life!</p>
+                </div>
+                <div class="service">
+                    <h1>Wedding Anniversary</h1>
+                    <p>Celebrate your love with our anniversary services, including customized catering, elegant
+                        decorations, and live music for a perfect ambiance. Capture the essence of your journey with a
+                        personalized photography session and custom anniversary video. We also offer unique party favors
+                        and
+                        personalized gifts for your guests. Enjoy a beautiful cake and dessert table, along with
+                        interactive
+                        entertainment options. Make your anniversary unforgettable with our premium event solutions!</p>
+                </div>
+                <div class="service">
+                    <h1>Naming Ceremony</h1>
+                    <p>Our services for naming ceremonies include adorable photo shoots, delightful catering, and
+                        vibrant
+                        decorations that make the day special. We create personalized backdrops for the name reveal and
+                        offer interactive games for family and friends. Our catering includes a variety of delectable
+                        treats
+                        suited for all ages. We also provide custom invitations and personalized baby keepsakes for
+                        guests.
+                        Celebrate this milestone with elegance and joy, all while we handle the details.</p>
+                </div>
+                <div class="service">
+                    <h1>Baby Shower</h1>
+                    <p>We design the perfect baby shower with customizable themes, including beautiful decorations,
+                        photo
+                        shoots, and flower arrangements. Capture every precious moment with our professional photography
+                        services. Our catering ensures delicious, baby-friendly treats for everyone to enjoy.
+                        Interactive
+                        games and customized party favors add a personal touch to the event. Let us make your baby
+                        shower an
+                        unforgettable celebration with everything you need!</p>
+                </div>
+                <div class="service">
+                    <h1>Housewarming Ceremony</h1>
+                    <p>Celebrate your new home with our tailored housewarming services, including stylish home
+                        decorations,
+                        lightings, and traditional pooja setups. We offer customizable catering that suits your taste,
+                        from
+                        casual snacks to full-course meals. Elegant flower arrangements enhance the atmosphere, and our
+                        personalized thank-you notes make guests feel appreciated. Let us provide all the details, from
+                        beautiful decor to efficient event hosting. Make your housewarming memorable with our seamless
+                        event
+                        planning services.</p>
+                </div>
+                <div class="service">
+                    <h1>Birthday Parties</h1>
+                    <p>Make your birthday celebration unique with our customizable themes, from superheros to
+                        princesses. We
+                        offer personalized cake designs, interactive games, and a professional photo booth to capture
+                        every
+                        moment. Our catering ensures your guests enjoy a variety of delicious options, and we provide
+                        top-notch entertainment with DJ nights and lighting. Whether for kids or adults, we guarantee a
+                        fun
+                        and engaging atmosphere. Celebrate your special day with a perfectly planned event!</p>
+                </div>
+                <div class="service">
+                    <h1>Family Get-Together</h1>
+                    <p>Gather your loved ones for a memorable family reunion with personalized decorations, games, and
+                        catering. We offer a variety of cuisine options and ensure the event has lively music, fun
+                        activities, and interactive entertainment. Customizable seating arrangements and event hosting
+                        make
+                        your gathering comfortable and stress-free. Whether indoor or outdoor, our team ensures
+                        everything
+                        is tailored to your family’s needs. Let us handle the details so you can focus on making
+                        memories.
+                    </p>
+                </div>
+                <div class="service">
+                    <h1>School & College Fest</h1>
+                    <p>Our services for school annual days include stage designs, lighting, and sound systems to create
+                        a
+                        grand atmosphere for performances. We also provide event photography and videography to capture
+                        every student’s moment. Catering options are available, offering kid-friendly meals that
+                        everyone
+                        will enjoy. Our professional hosts ensure smooth coordination during speeches and performances.
+                        From
+                        the decorations to the entertainment, we provide everything needed for a successful annual day
+                        celebration.</p>
+                </div>
+                <div class="service">
+                    <h1>Political Events</h1>
+                    <p>Make your political event impactful with customized stage designs, logos, and decorations. We
+                        offer
+                        sound systems, lighting, and live streaming to ensure your message reaches a wider audience. Our
+                        services also include professional photography and videography, capturing every moment for your
+                        campaign. We provide bouncers and security to keep the event safe and well-organized. Whether
+                        it’s a
+                        rally or a press conference, we provide the solutions to make your event a success.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="foot">
+            <div class="copyright">Copyright 2025 VJ Events &copy. All rights reserved.</div>
+            <ul class="icons">
+                <li><a href="https://www.instagram.com/v_j.events?igsh=MWIzNWZkaWR2cG51Zg=="><img src="images/instagram white.png" alt=""></a></li>
+                <li><a href=""><img src="images/whatsapp-white-icon.png" alt=""></a></li>
+                <li><a href="Contactus.html"><img src="images/gmail white.png" alt=""></a></li>
+                <li><a href="Contactus.html"><img src="images/location white.png" alt=""></a></li>
+            </ul>
+        </footer>
+    </main>
+
+</body>
+
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<script>
+
+    const togglebutton = document.getElementsByClassName('navbar-toggle')[0];
+    const navbarLinks = document.getElementsByClassName('navbar-links');
+    togglebutton.addEventListener('click', function () {
+        for (var i = 0; i < navbarLinks.length; i++)
+            navbarLinks[i].classList.toggle('active');
+    });
+
+    document.addEventListener("scroll", function () {
+        clearTimeout(window.showElementTimeout); // Reset the timer on every scroll
+
+        window.showElementTimeout = setTimeout(() => {
+            document.getElementById("myElement").style.opacity = "1"; // Show element
+        }, 2000); // Delay of 2 seconds after scrolling stops
+    });
+
+</script>
+
+</html>

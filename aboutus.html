@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>VJ Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(90deg, #2C3930, black);
+            background-size: 300% 300%;
+            animation: gradient-animation 5s linear infinite;
+
+            @keyframes gradient-animation {
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                50% {
+                    background-position: 100% 50%;
+                }
+
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            font-family: "Playfair Display",
+            serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+        }
+
+
+        .nav {
+            background-color: #111e15;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+
+        .navbar ul {
+            display: flex;
+            max-width: 90%;
+            margin: auto;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar li {
+            list-style-type: none;
+
+        }
+
+        .navbar a {
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .navbar-logo {
+            flex: 1;
+            user-select: none;
+        }
+
+        .navbar-logo img {
+            width: 90px;
+        }
+
+        .navbar-toggle {
+            display: none;
+        }
+
+        .navbar-links:hover a {
+            color: #eacd9f;
+            text-decoration: underline;
+        }
+
+        .firstsection {
+            max-width: 70%;
+            margin: auto;
+        }
+
+        .title {
+            padding-top: 25px;
+            text-align: center;
+            margin-left: 15%;
+            font-size: 5rem;
+            color: #eacd9f;
+        }
+
+        .img-section {
+            max-width: 80%;
+            margin: auto;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .firstsection .img3 {
+            margin-top: 25px;
+            border-style: solid;
+            border-width: 3.5px;
+            border-color: #A27B5C;
+            border-radius: 5%;
+            height: 400px;
+            z-index: 1;
+            position: absolute;
+            top: -20%;
+            left: -15%;
+        }
+
+        .firstsection .img1 {
+            margin-top: 50px;
+            height: 550px;
+            border-radius: 2%;
+            border-style: solid;
+            border-width: 3.5px;
+            border-color: #A27B5C;
+            margin-bottom: 50px;
+        }
+
+
+        .text-1 {
+            max-width: 80%;
+            margin: auto;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            font-size: 25px;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        span {
+            color: #eacd9f;
+        }
+
+        .secondmain {
+            background-color: #eacd9f;
+        }
+
+        .secondsection {
+            padding-top: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            max-width: 70%;
+            margin: auto;
+        }
+
+        .left {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            max-width: 70%;
+            margin: auto;
+            flex-direction: row-reverse;
+            padding: 100px 0 50px 0;
+        }
+
+        .second-img img {
+            width: 350px;
+            height: 450px;
+            border-radius: 5%;
+            border: #A27B5C solid 3px;
+        }
+
+        .text {
+            padding: 0 50px 0 50px;
+        }
+
+        .title1 {
+            color: #2C3930;
+            font-size: 50px;
+        }
+
+        .text-2 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: black;
+            font-size: 20px;
+            margin-top: 25px;
+        }
+
+        .foot {
+            background-color: rgb(1, 18, 1);
+            width: 100%;
+            margin: auto;
+            height: 70px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .foot ul li {
+            list-style-type: none;
+            display: inline-block;
+            padding-left: 40px;
+        }
+
+        .foot ul li a img {
+            text-decoration: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+        }
+
+        .copyright{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @media (max-width : 900px) {
+            .navbar a {
+                font-size: 15px;
+                padding: 1rem;
+            }
+
+            .firstsection {
+                max-width: 80%;
+                margin: auto;
+            }
+
+            .firstsection .img1 {
+                height: 350px;
+                width: 110%;
+                margin-bottom: 5%;
+            }
+
+            .firstsection .img3 {
+                height: 250px;
+                position: absolute;
+                top: -20%;
+                left: -20%;
+            }
+
+            .title {
+                font-size: 2.5rem;
+                margin: 0;
+            }
+
+            .text-1 {
+                font-size: 18px;
+            }
+
+            .second-img img {
+                width: 250px;
+                height: 350px;
+            }
+
+            .secondsection {
+                max-width: 90%;
+                margin: auto;
+            }
+
+            .title1 {
+                font-size: 30px;
+            }
+
+            .text-2 {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width : 770px) {
+            .navbar ul {
+                flex-wrap: wrap;
+            }
+
+            .navbar-toggle {
+                display: block;
+            }
+
+            .navbar-links {
+                display: none;
+                width: 100%;
+                text-align: center;
+                padding-bottom: 15px;
+            }
+
+            .navbar-logo img {
+                width: 60px;
+                padding-top: 10px;
+            }
+
+            .active {
+                display: block;
+            }
+
+            .title {
+                max-width: 60%;
+                font-size: 2rem;
+                margin: auto;
+                margin-left: 30%;
+            }
+
+            .firstsection .img1 {
+                height: 300px;
+                width: 100%;
+            }
+
+            .firstsection .img3 {
+                height: 200px;
+                position: absolute;
+                top: -15%;
+                left: -20%;
+            }
+
+            .text-1 {
+                font-size: 17px;
+            }
+
+            .secondsection {
+                padding-top: 25px;
+                max-width: 90%;
+                margin: auto;
+                flex-direction: column;
+            }
+
+            .second-img img {
+                margin-top: 10px;
+                width: 100%;
+                height: 350px;
+            }
+
+            .title1 {
+                font-size: 30px;
+                padding-bottom: 0;
+                padding-top: 10px;
+            }
+
+            .text-2 {
+                margin-top: 5px;
+                font-size: 16px;
+            }
+
+            .foot{
+                flex-direction: column;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .icons{
+                padding-top: 15px;
+            }
+
+            .foot ul li a img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width : 426px) {
+            .title {
+                max-width: 60%;
+                font-size: 1.5rem;
+                margin: auto;
+                margin-left: 30%;
+            }
+
+            .firstsection {
+                max-width: 90%;
+                margin: auto;
+            }
+
+            .firstsection .img1 {
+                height: 200px;
+                width: 100%;
+            }
+
+            .firstsection .img3 {
+                height: 150px;
+                position: absolute;
+                top: -20%;
+                left: -10%;
+            }
+
+            .text-1 {
+                font-size: 14px;
+            }
+
+            .title1 {
+                font-size: 25px;
+            }
+
+            .text-2 {
+                margin-top: 5px;
+                font-size: 14px;
+            }
+
+            .copyright{
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width : 376px) {
+            .title {
+                max-width: 60%;
+                font-size: 1.3rem;
+                margin: auto;
+                margin-left: 30%;
+            }
+
+            .firstsection .img1 {
+                height: 170px;
+                width: 100%;
+            }
+
+            .firstsection .img3 {
+                height: 120px;
+                position: absolute;
+                top: -20%;
+                left: -10%;
+            }
+
+            .text-1 {
+                font-size: 10px;
+            }
+
+            .secondsection {
+                max-width: 100%;
+                margin: auto;
+            }
+
+            .copyright{
+                font-size: 12px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="nav">
+            <nav class="navbar">
+                <ul>
+                    <li class="navbar-logo"><img src="images/logo.png" alt=""></li>
+                    <li class="navbar-toggle"><i class="fa fa-bars"></i></li>
+                    <li class="navbar-links"><a href="index.html">Home</a></li>
+                    <li class="navbar-links"><a href="aboutus.html">About Us</a></li>
+                    <li class="navbar-links"><a href="OurServices.html">Our Services</a></li>
+                    <li class="navbar-links"><a href="EventThemes.html">Event Themes</a></li>
+                    <li class="navbar-links"><a href="Contactus.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="firstsection">
+            <h1 class="title">About VJ Events</h1>
+            <div class="img-section">
+                <img class="img1" src="images/aboutusimg1.jpg" alt="">
+                <img class="img3" src="images/aboutusimg2.jpg" alt="">
+            </div>
+        </section>
+
+        <p class="text-1">Welcome to <span><strong>VJ Events</strong></span>, where extraordinary <br> moments come
+            to life! With a deep passion for <br> curating unforgettable experiences, <br> we specialize in
+            designing and executing events <br> that leave a lasting impact.</p>
+
+        <div class="secondmain">
+            <section class="secondsection">
+                <div class="second-img">
+                    <img src="images/aboutusimg4.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h1 class="title1">Our Mission</h1>
+                    <p class="text-2">Our mission at VJ Events is to craft extraordinary and unforgettable experiences
+                        that bring our clients’ unique visions to life. We are committed to exceeding expectations
+                        through impeccable quality, innovative designs, and unmatched service, ensuring that every event
+                        we create is nothing short of spectacular. By blending creativity with precision and
+                        personalization, we strive to transform ordinary occasions into remarkable moments that leave a
+                        lasting impact.</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="secondmain">
+            <section class="secondsection left">
+                <div class="second-img">
+                    <img src="images/aboutusimg5.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h1 class="title1">Our Vision</h1>
+                    <p class="text-2">At VJ Events, we strive to be a premier name in the event industry, renowned for
+                        our excellence, creativity, and client-focused approach. Our mission is to empower individuals
+                        and businesses to celebrate life’s most cherished moments with unforgettable experiences. We
+                        envision setting new benchmarks in event planning by seamlessly blending innovation with
+                        tradition, ensuring each event reflects our clients’ dreams. With a commitment to precision,
+                        personalization, and exceptional service, we aim to transform ordinary occasions into
+                        extraordinary memories, fostering connections and creating lasting impressions.</p>
+                </div>
+            </section>
+        </div>
+
+        <footer class="foot">
+            <div class="copyright">Copyright 2025 VJ Events &copy;. All rights reserved.</div>
+            <ul class="icons">
+                <li><a href="https://www.instagram.com/v_j.events?igsh=MWIzNWZkaWR2cG51Zg=="><img src="images/instagram white.png" alt=""></a></li>
+                <li><a href=""><img src="images/whatsapp-white-icon.png" alt=""></a></li>
+                <li><a href="Contactus.html"><img src="images/gmail white.png" alt=""></a></li>
+                <li><a href="Contactus.html"><img src="images/location white.png" alt=""></a></li>
+            </ul>
+        </footer>
+    </main>
+</body>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<script>
+
+    const togglebutton = document.getElementsByClassName('navbar-toggle')[0];
+    const navbarLinks = document.getElementsByClassName('navbar-links');
+    togglebutton.addEventListener('click', function () {
+        for (var i = 0; i < navbarLinks.length; i++)
+            navbarLinks[i].classList.toggle('active');
+    });
+</script>
+
+</html>
